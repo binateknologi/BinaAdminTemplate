@@ -20,101 +20,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        * {
-            font-family: 'Poppins';
-        }
+    <link rel="stylesheet" href="dist/css/theme_indigo.css">
 
-        .sidebars {
-            width: 260px;
-            transition: 0.2s;
-            overflow: auto;
-            z-index: 9;
-        }
-
-        .sidebars.mati {
-            width: 0px;
-            padding-left: 0px !important;
-            padding-right: 0px !important;
-            overflow: auto;
-        }
-
-        .sidebars .still {
-            width: 225px !important;
-        }
-
-        .sidebars::-webkit-scrollbar {
-            display: none;
-        }
-
-        .main-content {
-            position: relative;
-            left: 260px;
-            width: calc(100% - 260px);
-            transition: 0.2s;
-        }
-
-        .sidebars.mati~.main-content {
-            left: 0px;
-            width: calc(100% - 0px);
-
-        }
-
-        a.nav-link {
-            margin-top: 5px;
-            padding-top: 12px;
-            padding-bottom: 12px;
-        }
-
-        .bg-light {
-            background-color: #fdfdfd !important;
-        }
-
-        .nav-pills li {
-            margin-top: 8px;
-        }
-
-        .aktif {
-            color: #ffffff !important;
-            background-color: #10de89 !important;
-            font-weight: 600;
-        }
-
-        .bg-success {
-            background-color: #10de89 !important;
-        }
-
-        .bg-primary {
-            background-color: #3F51B5 !important;
-        }
-
-        .br-danger {
-
-            background-color: #F44336 !important;
-
-        }
-
-        .nav-pills .nav-link {
-            display: flex;
-            align-items: center;
-            background-color: #ffffff00;
-            transition: .1s;
-        }
-
-        .nav-pills .nav-link:hover {
-            background-color: #90A4AE35;
-        }
-
-        li a svg {
-            width: 16px;
-            height: 16px;
-            margin-right: 14px;
-        }
-
-        .col-sm-4 {
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="dist/css/sidebar.css">
 </head>
 
 <body class="bg-light">
@@ -122,8 +30,11 @@
     <main>
         <!-- Start SIdebar  -->
 
-        <div class="sidebars px-3 py-2 text-dark bg-light shadow-sm fixed-top h-100">
-            <a href="/" class="still d-flex align-items-center mb-2 text-dark text-decoration-none">
+        <div class="sidebars px-3 py-2 text-dark bg-light shadow-lg h-100 fixed-top">
+
+            <button onclick="expand_main()" class="ss d-block d-sm-none shadow-none  btn btn-light">
+                <i data-feather="x"></i></button>
+            <a href="/" class="sidebar-header still d-flex align-items-center mb-2 text-dark text-decoration-none">
                 <img src="dist/img/fav.png" class="me-2" width="36px" alt="">
                 <span class="fs-4 fw-bolder">Bina Admin</span>
             </a>
@@ -135,6 +46,7 @@
                         Dashboard
                     </a>
                 </li>
+
                 <li>
                     <a href="#" class="nav-link text-dark">
                         <i data-feather="table"></i>
@@ -153,6 +65,8 @@
                         Supplier
                     </a>
                 </li>
+                <hr>
+
                 <li>
                     <a href="#" class="nav-link text-dark">
                         <i data-feather="pie-chart"></i>
@@ -165,58 +79,54 @@
                         Laporan
                     </a>
                 </li>
+
+
             </ul>
 
         </div>
         <!-- ENd SIde Bar  -->
 
 
-        <div class="main-content">
+        <div class="main-content bg-light">
             <!-- Navbar  -->
-            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <nav class="navbar navbar-expand-sm shadow-none navbar-light bg-light">
                 <div class="container">
-                    <button onclick="expand_main()" class="btn bg-light border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                    <button onclick="expand_main()" class="btn bg-light border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                         <i data-feather="menu"></i>
                     </button>
 
-                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                        <li class="nav-item dropdown">
-                            <div class="dropdown">
-                                <button class="me-1 btn btn-white border-0" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i data-feather="mail"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="triggerId">
+                    <div class="ms-auto mt-2 mt-lg-0">
+                        <div class="dropdown  d-inline-block">
+                            <button class="me-1 btn btn-white border-0 shadow-none" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i data-feather="mail"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="triggerId">
 
-                                </div>
                             </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <div class="dropdown">
-                                <button class="me-1 btn btn-white border-0" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i data-feather="bell"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="triggerId">
+                        </div>
+                        <div class="dropdown  d-inline-block">
+                            <button class="me-1 btn btn-white shadow-none border-0" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i data-feather="bell"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="triggerId">
 
-                                </div>
                             </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <div class="dropdown">
-                                <button class="me-3 btn btn-white border-0" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i data-feather="settings"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="triggerId">
-                                    <button class="dropdown-item" href="#">Settings</button>
-                                    <button class="dropdown-item" href="#">Logout</button>
-                                </div>
+                        </div>
+                        <div class="dropdown  d-inline-block">
+                            <button class="me-1 btn btn-white border-0 shadow-none" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i data-feather="settings"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="triggerId">
+
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+
+                    </div>
                 </div>
             </nav>
             <!-- end Navbar  -->
 
-            <div class="container px-4">
+            <div class="container px-4" style="min-height: 90vh;">
                 <h4 class="fw-bold">Dashboard</h4>
                 <div class="row mt-4">
                     <div class="col-sm-4">
@@ -261,14 +171,8 @@
 
     <!-- Boostraps Bundle  -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js' integrity='sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==' crossorigin='anonymous'></script>
-    <script>
-        function expand_main() {
-            $('.sidebars').toggleClass('mati');
-        }
-    </script>
-    <script>
-        feather.replace()
-    </script>
+
+    <script src="dist/js/sidebar.js"></script>
 
 </body>
 
