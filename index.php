@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- BOOTSTRAP CSS -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous' />
+    <!-- Bootstrap - short-cut(bina-bsmin) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
 
     <!-- Boostrap ICONS  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -17,6 +19,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    <script src="https://unpkg.com/feather-icons"></script>
     <style>
         * {
             font-family: 'Poppins';
@@ -58,7 +61,7 @@
         }
 
         a.nav-link {
-            margin-top: 10px;
+            margin-top: 5px;
             padding-top: 12px;
             padding-bottom: 12px;
         }
@@ -73,18 +76,44 @@
 
         .aktif {
             color: #ffffff !important;
-            background-color: #00148d80 !important;
+            background-color: #10de89 !important;
             font-weight: 600;
         }
 
-        .aktif::before {
-            content: '';
-            background-color: red;
-        }
-        .col-sm-4{
-            margin-bottom: 10px;
+        .bg-success {
+            background-color: #10de89 !important;
         }
 
+        .bg-primary {
+            background-color: #3F51B5 !important;
+        }
+
+        .br-danger {
+
+            background-color: #F44336 !important;
+
+        }
+
+        .nav-pills .nav-link {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff00;
+            transition: .1s;
+        }
+
+        .nav-pills .nav-link:hover {
+            background-color: #90A4AE35;
+        }
+
+        li a svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 14px;
+        }
+
+        .col-sm-4 {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -95,33 +124,45 @@
 
         <div class="sidebars px-3 py-2 text-dark bg-light shadow-sm fixed-top h-100">
             <a href="/" class="still d-flex align-items-center mb-2 text-dark text-decoration-none">
-                <i class="bi bi-bootstrap fs-3 me-3"></i>
+                <img src="dist/img/fav.png" class="me-2" width="36px" alt="">
                 <span class="fs-4 fw-bolder">Bina Admin</span>
             </a>
             <ul class="still nav nav-pills flex-column mb-auto">
 
                 <li>
                     <a href="#" class="nav-link text-dark aktif">
-                        <i class="bi bi-speedometer2 me-2"></i>
+                        <i data-feather="home"></i>
                         Dashboard
                     </a>
                 </li>
                 <li>
                     <a href="#" class="nav-link text-dark">
-                        <i class="bi bi-table me-2"></i>
-                        Orders
+                        <i data-feather="table"></i>
+                        Data Barang
                     </a>
                 </li>
                 <li>
                     <a href="#" class="nav-link text-dark">
-                        <i class="bi bi-grid me-2"></i>
-                        Products
+                        <i data-feather="grid"></i>
+                        Kategori
                     </a>
                 </li>
                 <li>
                     <a href="#" class="nav-link text-dark">
-                        <i class="bi bi-people me-2"></i>
-                        Customers
+                        <i data-feather="users"></i>
+                        Supplier
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-dark">
+                        <i data-feather="pie-chart"></i>
+                        Analisis
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-dark">
+                        <i data-feather="bar-chart-2"></i>
+                        Laporan
                     </a>
                 </li>
             </ul>
@@ -135,9 +176,42 @@
             <nav class="navbar navbar-expand-sm navbar-light bg-light">
                 <div class="container">
                     <button onclick="expand_main()" class="btn bg-light border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class=" text-dark navbar-toggler-icon"></span>
+                        <i data-feather="menu"></i>
                     </button>
 
+                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                        <li class="nav-item dropdown">
+                            <div class="dropdown">
+                                <button class="me-1 btn btn-white border-0" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i data-feather="mail"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="triggerId">
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="dropdown">
+                                <button class="me-1 btn btn-white border-0" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i data-feather="bell"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="triggerId">
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="dropdown">
+                                <button class="me-3 btn btn-white border-0" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i data-feather="settings"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="triggerId">
+                                    <button class="dropdown-item" href="#">Settings</button>
+                                    <button class="dropdown-item" href="#">Logout</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </nav>
             <!-- end Navbar  -->
@@ -146,26 +220,36 @@
                 <h4 class="fw-bold">Dashboard</h4>
                 <div class="row mt-4">
                     <div class="col-sm-4">
-                        <div class="card shadow-lg p-2 rounded-3 border-0">
+                        <div class="card p-2 shadow-lg rounded-3 border-0">
                             <div class="card-body">
-                                <h4 class="card-title">Title</h4>
-                                <p class="card-text">Text</p>
+                                <div class="float-end me-1 mt-3 p-2 text-white bg-success rounded-circle mb-3" style="width: 40px;height: 40px;">
+                                    <i data-feather="monitor"></i>
+                                </div>
+                                <p class="card-text text-muted">Pemasukan</p>
+                                <h3 class="card-title fw-bold">Rp.12.4000.000</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card shadow-lg p-2 rounded-3 border-0">
+                        <div class="card p-2 shadow-lg rounded-3 border-0">
                             <div class="card-body">
-                                <h4 class="card-title">Title</h4>
-                                <p class="card-text">Text</p>
+                                <div class="float-end me-1 mt-3 p-2 text-white bg-primary rounded-circle mb-3" style="width: 40px;height: 40px;">
+                                    <i data-feather="truck"></i>
+                                </div>
+                                <p class="card-text text-muted">Pengiriman</p>
+                                <h3 class="card-title fw-bold">150 Stuff</h3>
+
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card shadow-lg p-2 rounded-3 border-0">
+                        <div class="card p-2 shadow-lg rounded-3 border-0">
                             <div class="card-body">
-                                <h4 class="card-title">Title</h4>
-                                <p class="card-text">Text</p>
+                                <div class="float-end me-1 mt-3 p-2 text-white bg-danger rounded-circle mb-3" style="width: 40px;height: 40px;">
+                                    <i data-feather="package"></i>
+                                </div>
+                                <p class="card-text text-muted">Stok Gudang</p>
+                                <h3 class="card-title fw-bold">400 Stuff</h3>
                             </div>
                         </div>
                     </div>
@@ -181,6 +265,9 @@
         function expand_main() {
             $('.sidebars').toggleClass('mati');
         }
+    </script>
+    <script>
+        feather.replace()
     </script>
 
 </body>
